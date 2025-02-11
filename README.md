@@ -6,25 +6,25 @@ Both projects require the following classes.
 
 ### `Card`
 
-The `Card` class implements the `Comparable<Card>` interface
+The `Card` class implements the `Comparable<Card>` interface - yes
 
 #### Attributes
 
-* A suit to be chosen from `CLUBS, DIAMONDS, HEARTS, SPADES`
-* A rank to be chosen from `ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING` 
-* The suit and rank should be declared using `enum` structures named `Suit` and `Rank`
+* A suit to be chosen from `CLUBS, DIAMONDS, HEARTS, SPADES` - yes
+* A rank to be chosen from `ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING`  - yes
+* The suit and rank should be declared using `enum` structures named `Suit` and `Rank` - yes
 
 #### Constructors
 
-* `public Card()` should produce a randomly chosen `Card` object
-* `public Card(Suit suit, Rank rank)` should produce a `Card` object of the specified suit and rank
+* `public Card()` should produce a randomly chosen `Card` object - yes
+* `public Card(Suit suit, Rank rank)` should produce a `Card` object of the specified suit and rank - yes
 
 #### Methods
 
-* `public void getSuit()` returns the suit of the `Card` object
-* `pubilc void getRank()` returns the rank of the `Card` object
-* `public String toString()` returns a well-formatted `String` repesentation of this `Card` object
-* `public int compareTo(Card otherCard)` compares this `Card` object to `otherCard`. Rank is compared first and then suit.
+* `public void getSuit()` returns the suit of the `Card` object - yes
+* `pubilc void getRank()` returns the rank of the `Card` object - yes
+* `public String toString()` returns a well-formatted `String` repesentation of this `Card` object - yes
+* `public int compareTo(Card otherCard)` compares this `Card` object to `otherCard`. Rank is compared first and then suit. - yes
 
 ### `Deck`
 
@@ -32,12 +32,12 @@ A `Deck` object holds a sequence of `Card` objects that can be used in card game
 
 #### Attributes
 
-* `deck` is a list of `Card` objects
-* A `Random` object 
+* `deck` is a list of `Card` objects - yes
+* A `Random` object - yes
 
 #### Constructors
 
-* `public Deck()` constructs a standard 52-card deck using the `build()` method
+* `public Deck()` constructs a standard 52-card deck using the `build()` method - yes
 
 #### Methods
 
@@ -56,7 +56,7 @@ A `Hand` object holds a sequence of `Card` objects that represent the cards a si
 
 #### Attributes
 
-* `hand` is a list of `Card` objects
+* `hand` is a list of `Card` objects - yes
 
 #### Constructors
 

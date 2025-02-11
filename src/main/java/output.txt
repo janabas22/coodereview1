@@ -1,0 +1,52 @@
+Dealer wins: 4998
+Player wins: 4172
+Pushes: 830
+
+Initial Lamarckian hands
+
+Player 1: 
+SEVEN of DIAMONDS
+ACE of SPADES
+THREE of DIAMONDS
+SEVEN of SPADES
+
+Player 2: 
+FOUR of SPADES
+QUEEN of DIAMONDS
+FOUR of HEARTS
+TWO of SPADES
+
+Pool: 
+
+Final Lamarckian hands
+
+Player 1: 
+FOUR of CLUBS
+KING of DIAMONDS
+EIGHT of SPADES
+KING of HEARTS
+THREE of DIAMONDS
+SEVEN of DIAMONDS
+QUEEN of DIAMONDS
+TWO of HEARTS
+
+Player 2: 
+FIVE of SPADES
+QUEEN of SPADES
+JACK of SPADES
+EIGHT of HEARTS
+FOUR of HEARTS
+NINE of HEARTS
+SIX of HEARTS
+
+Pool: 
+
+Player 1 wins!
+
+
+* note:  for some reason, i have to run the program multiple times so i can get the proper output *
+
+to run javadoc, enter command: 
+        open doc/index.html
+        
+file:///Users/janabassalat/Desktop/coodereview1/doc/edu/guilford/package-summary.html

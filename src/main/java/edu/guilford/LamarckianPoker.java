@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class LamarckianPoker {
+    /**
+     * The player's hand, the dealer's hand, the pool, the discard pile, and the deck of cards.
+     */
     private Hand player1Hand;
     private Hand player2Hand;
     private Hand pool;
@@ -12,6 +15,9 @@ public class LamarckianPoker {
     private Random rand = new Random();
     private int iTurn;
 
+    /**
+     * Constructor for the LamarckianPoker class. Initializes the player's hand, the dealer's hand, the pool, the discard pile, and the deck of cards.
+     */
     public LamarckianPoker() {
         reset(true);
     }
@@ -28,6 +34,10 @@ public class LamarckianPoker {
         return pool;
     }
 
+    /**
+     * Resets the game. If newDeck is true, a new deck is created and shuffled.
+     * @param newDeck
+     */
     public void reset(boolean newDeck) {
         if (newDeck) {
             deck = new Deck();
@@ -35,9 +45,16 @@ public class LamarckianPoker {
             discard.clear();
             deck.shuffle();
         }
+        player1Hand = new Hand();
+        player2Hand = new Hand();
+        pool = new Hand();
         iTurn = 0;
     }
 
+    /**
+     * Deals four cards to each player.
+     * The player's hand is the first card dealt to the player and the second card dealt to the player.
+     */
     public void deal() {
         player1Hand = new Hand();
         player2Hand = new Hand();
@@ -47,6 +64,9 @@ public class LamarckianPoker {
         }
     }
 
+    /**
+     * The player's turn. The player hits until the player's hand is 16 or greater.
+     */
     public void makePool() {
         pool = new Hand();
         for (int iCard = 0; iCard < 4; iCard++) {
@@ -55,6 +75,12 @@ public class LamarckianPoker {
         // System.out.println("Deck size: " + deck.size());
     }
 
+    /**
+     * The player's turn. The player hits until the player's hand is 16 or greater.
+     * @return boolean
+     * @return true
+     * @return false
+     */
     public boolean turn() {
         if (player1Hand.size() < 7 || player2Hand.size() < 7) {
             makePool();
@@ -102,7 +128,7 @@ public class LamarckianPoker {
                 pool.removeCard(poolCard);
             }
             poolRemove.clear();
-            pool.addCard(firstCard);
+            discard.getDeck().add(firstCard);
             firstHand.removeCard(firstCard);
             for (Card poolCard : pool.getHand()) {
                 if (secondCard.getRank().ordinal() == poolCard.getRank().ordinal() ||
@@ -114,7 +140,7 @@ public class LamarckianPoker {
             for (Card poolCard : poolRemove) {
                 pool.removeCard(poolCard);
             }
-            pool.addCard(secondCard);
+            discard.getDeck().add(secondCard);
             secondHand.removeCard(secondCard);
             for (Card poolCard : pool.getHand()) {
                 discard.getDeck().add(poolCard);
@@ -137,6 +163,31 @@ public class LamarckianPoker {
 
     }
 
+    /**
+     * Evaluates the hands of the players.
+     * @return a string indicating the winner of the game.
+     * If player 1 wins, the string "Player 1 wins!" is returned.
+     * If player 2 wins, the string "Player 2 wins!" is returned.
+     * If the game is a tie, the string "It's a tie!" is returned.
+     */
+    public String evaluateHands() {
+        // This is a placeholder implementation. You can replace it with actual poker hand evaluation logic.
+        int player1Score = player1Hand.getTotalValue();
+        int player2Score = player2Hand.getTotalValue();
+
+        if (player1Score > player2Score) {
+            return "Player 1 wins!";
+        } else if (player2Score > player1Score) {
+            return "Player 2 wins!";
+        } else {
+            return "It's a tie!";
+        }
+    }
+
+    /**
+     * The string representation of the LamarckianPoker game.
+     * @return a string representation of the LamarckianPoker game.
+     */
     @Override
     public String toString() {
         return "\nPlayer 1: \n" + player1Hand + "\nPlayer 2: \n" + player2Hand + "\nPool: " + pool + "\n";

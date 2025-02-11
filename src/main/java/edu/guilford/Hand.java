@@ -3,6 +3,15 @@ package edu.guilford;
 import java.util.ArrayList;
 
 public class Hand {
+    /**
+     * The hand of cards.
+     * The hand is an ArrayList of Card objects.
+     * The hand is reset using the reset method.
+     * The hand is added to using the addCard method.
+     * The hand is removed from using the removeCard method.
+     * The hand is calculated using the getTotalValue method.
+     * The hand is converted to a string using the toString method.
+     */
     private ArrayList<Card> hand;
 
     
@@ -23,13 +32,15 @@ public class Hand {
         hand.clear();
     }
 
+    // not mentioned in specifications **
     public int size() {
         return hand.size();
-    }
+    } 
 
     public Card getCard(int index) {
         return hand.get(index);
     }
+
 
     // Calculate the value of the hand
     public int getTotalValue() {
@@ -82,6 +93,10 @@ public class Hand {
         return value;
     }
 
+    /**
+     * The string representation of the hand.
+     * @return
+     */
     // Override toString method
     public String toString() {
         String handString = "";
@@ -91,6 +106,10 @@ public class Hand {
         return handString;
     }
 
+    /**
+     * The hand of cards.
+     * @return
+     */
     public ArrayList<Card> getHand() {
         return hand;
     }
